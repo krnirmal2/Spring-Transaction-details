@@ -74,11 +74,13 @@ public class OrderProcessingService {
         }
 
         //retries 3
-        notificationHandler.sendOrderConfirmationNotification(order);
+//        notificationHandler.sendOrderConfirmationNotification(order);
 //        System.out.println("payment is in mantory propagation lebel ");
 //         paymentValidatorHandler.validatePayment(order);
 
-        // recommendationHandler.getRecommendations();
+        System.out.println("recomandation will just read the similar kind of purshcase that you are currently ordering and " +
+                "read that product db with some logic system");
+         recommendationHandler.getRecommendations();
 
 //        getCustomerDetails();
 
