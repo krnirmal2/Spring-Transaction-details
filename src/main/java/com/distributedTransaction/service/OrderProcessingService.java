@@ -74,9 +74,9 @@ public class OrderProcessingService {
         }
 
         //retries 3
-        //notificationHandler.sendOrderConfirmationNotification(order);
-        System.out.println("payment is in mantory propagation lebel ");
-         paymentValidatorHandler.validatePayment(order);
+        notificationHandler.sendOrderConfirmationNotification(order);
+//        System.out.println("payment is in mantory propagation lebel ");
+//         paymentValidatorHandler.validatePayment(order);
 
         // recommendationHandler.getRecommendations();
 

@@ -20,7 +20,7 @@ public class InventoryHandler {
     public Product updateProductDetails(Product product) {
 
         //forcefully throwing exception to simulate use of tx
-        if(product.getPrice() > 60000){
+        if(product.getPrice() > 80000){
             throw new RuntimeException("DB crashed.....");
         }
         return inventoryRepository.save(product);

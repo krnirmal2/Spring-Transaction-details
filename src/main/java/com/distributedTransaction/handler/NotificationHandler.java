@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class NotificationHandler {
 
-    @Transactional(propagation = Propagation.NEVER)
+    @Transactional(propagation = Propagation.NEVER)// this NEVER is not required existing transaction as it is not
+    // not want to depend on the existing transaction
     public void sendOrderConfirmationNotification(Order order) {
         // Send an email notification to the customer
         System.out.println( order.getId()+" Order placed successfully");
