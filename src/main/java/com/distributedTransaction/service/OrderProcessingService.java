@@ -49,7 +49,7 @@ public class OrderProcessingService {
 
     //outer tx
     // isolation : controls the visibility of changes made by one transaction to other transaction
-    @Transactional(propagation = Propagation.REQUIRED)
+//    @Transactional(propagation = Propagation.REQUIRED)
     public Order placeAnOrder(Order order) {
 
         //Step 1:  get product inventory
@@ -78,11 +78,11 @@ public class OrderProcessingService {
 //        System.out.println("payment is in mantory propagation lebel ");
 //         paymentValidatorHandler.validatePayment(order);
 
-        System.out.println("recomandation will just read the similar kind of purshcase that you are currently ordering and " +
-                "read that product db with some logic system");
-         recommendationHandler.getRecommendations();
+//        System.out.println("recomandation will just read the similar kind of purshcase that you are currently ordering and " +
+//                "read that product db with some logic system");
+//         recommendationHandler.getRecommendations();
 
-//        getCustomerDetails();
+        getCustomerDetails();
 
         return saveOrder;
     }
