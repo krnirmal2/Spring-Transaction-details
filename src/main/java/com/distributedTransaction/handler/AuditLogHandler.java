@@ -5,6 +5,8 @@ import com.distributedTransaction.entity.Order;
 import com.distributedTransaction.repository.AuditLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -15,7 +17,7 @@ public class AuditLogHandler {
     private AuditLogRepository auditLogRepository;
 
     // Log audit details (runs in an independent transaction)
-    //@Transactional(propagation = Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void logAuditDetails(Order order, String action) {
         AuditLog auditLog = new AuditLog();
         auditLog.setOrderId(Long.valueOf(order.getId()));
